@@ -63,8 +63,8 @@ function resolveOwn(relativePath) {
 // config before eject: we're in ./node_modules/react-scripts/config/
 module.exports = {
   appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appPublic: resolveApp('assets'),
+  appHtml: resolveApp('assets/index.html'),
   appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
@@ -80,8 +80,8 @@ module.exports = {
 if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) {
   module.exports = {
     appBuild: resolveOwn('../../../build'),
-    appPublic: resolveOwn('../template/public'),
-    appHtml: resolveOwn('../template/public/index.html'),
+    appPublic: resolveOwn('../template/assets'),
+    appHtml: resolveOwn('../template/assets/index.html'),
     appIndexJs: resolveOwn('../template/src/index.js'),
     appPackageJson: resolveOwn('../package.json'),
     appSrc: resolveOwn('../template/src'),
