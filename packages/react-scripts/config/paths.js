@@ -62,14 +62,14 @@ function resolveOwn(relativePath) {
 
 // config before eject: we're in ./node_modules/react-scripts/config/
 module.exports = {
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('assets'),
-  appHtml: resolveApp('assets/index.html'),
-  appIndexJs: resolveApp('src/index.js'),
+  appBuild: resolveApp('public/build'),
+  appPublic: resolveApp('public/assets'),
+  appHtml: resolveApp('public/assets/index.html'),
+  appIndexJs: resolveApp('public/src/index.js'),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
+  appSrc: resolveApp('public/src'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveApp('src/setupTests.js'),
+  testsSetup: resolveApp('public/src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   // this is empty with npm3 but node resolution searches higher anyway:
   ownNodeModules: resolveOwn('../node_modules'),
@@ -79,14 +79,14 @@ module.exports = {
 // config before publish: we're in ./packages/react-scripts/config/
 if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) {
   module.exports = {
-    appBuild: resolveOwn('../../../build'),
-    appPublic: resolveOwn('../template/assets'),
-    appHtml: resolveOwn('../template/assets/index.html'),
-    appIndexJs: resolveOwn('../template/src/index.js'),
+    appBuild: resolveOwn('../../../public/build'),
+    appPublic: resolveOwn('../template/public/assets'),
+    appHtml: resolveOwn('../template/public/assets/index.html'),
+    appIndexJs: resolveOwn('../template/public/src/index.js'),
     appPackageJson: resolveOwn('../package.json'),
-    appSrc: resolveOwn('../template/src'),
+    appSrc: resolveOwn('../template/public/src'),
     yarnLockFile: resolveOwn('../template/yarn.lock'),
-    testsSetup: resolveOwn('../template/src/setupTests.js'),
+    testsSetup: resolveOwn('../template/public/src/setupTests.js'),
     appNodeModules: resolveOwn('../node_modules'),
     ownNodeModules: resolveOwn('../node_modules'),
     nodePaths: nodePaths
